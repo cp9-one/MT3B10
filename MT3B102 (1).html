@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اشتراك دوولينجو بريميوم 12 شهر</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --bg: #0b0f17;
+      --surface: #111827;
+      --card: #151f30;
+      --card-inner: #101725;
+      --border: #1f2d42;
+      --border-hover: #2e4363;
+      --duo-green: #22c55e;
+      --duo-green-dim: rgba(34, 197, 94, 0.12);
+      --wa-green: #25d366;
+      --wa-green-hover: #20ba59;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --red: #ef4444;
+      --radius-xl: 20px;
+      --radius-lg: 14px;
+      --radius-md: 10px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Readex Pro', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 0;
+    }
+
+    header {
+      background: rgba(11, 15, 23, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+
+    .header-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #1b263b, #0f172a);
+      border: 1px solid #2a3a52;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--duo-green);
+      font-size: 1.2rem;
+    }
+
+    .header-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--duo-green-dim);
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      color: var(--duo-green);
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+    }
+
+    .status-pulse {
+      width: 8px;
+      height: 8px;
+      background: var(--duo-green);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--duo-green);
+    }
+
+    main {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 36px 20px;
+      width: 100%;
+      flex: 1;
+    }
+
+    .hero-strip {
+      background: linear-gradient(180deg, #131c2b 0%, #0e1522 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 24px 28px;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .hero-content h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .hero-content p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      max-width: 580px;
+    }
+
+    .badges-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .badge-chip {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 8px 14px;
+      border-radius: var(--radius-md);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge-chip i {
+      color: var(--duo-green);
+    }
+
+    .products-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .product-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      display: grid;
+      grid-template-columns: 1.25fr 0.85fr;
+      overflow: hidden;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+      transition: border-color 0.25s ease;
+    }
+
+    .product-card:hover {
+      border-color: var(--border-hover);
+    }
+
+    .card-body {
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--duo-green-dim);
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      color: var(--duo-green);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 6px;
+      margin-bottom: 14px;
+      width: fit-content;
+    }
+
+    .card-title {
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .card-desc {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 24px;
+      line-height: 1.8;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.86rem;
+      color: #e2e8f0;
+      background: rgba(255, 255, 255, 0.02);
+      padding: 10px 12px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .feature-icon {
+      width: 22px;
+      height: 22px;
+      background: var(--duo-green-dim);
+      color: var(--duo-green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .safety-notice {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.82rem;
+      color: #94a3b8;
+      background: rgba(59, 130, 246, 0.06);
+      border: 1px dashed rgba(59, 130, 246, 0.25);
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+    }
+
+    .safety-notice i {
+      color: #38bdf8;
+      font-size: 1rem;
+    }
+
+    .card-sidebar {
+      background: var(--card-inner);
+      border-right: 1px solid var(--border);
+      padding: 34px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .duration-tag {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .price-container {
+      margin-bottom: 16px;
+    }
+
+    .current-price {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .price-num {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 3.4rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .price-curr {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--duo-green);
+    }
+
+    .old-price-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .old-price-row del {
+      color: var(--red);
+      font-weight: 500;
+    }
+
+    .discount-pill {
+      background: rgba(239, 68, 68, 0.12);
+      color: #f87171;
+      padding: 3px 9px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.76rem;
+    }
+
+    .guarantee-box {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      margin-bottom: 22px;
+      width: 100%;
+    }
+
+    .whatsapp-btn {
+      background-color: var(--wa-green);
+      color: #ffffff !important;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 22px;
+      border-radius: var(--radius-lg);
+      font-size: 1.02rem;
+      font-weight: 700;
+      width: 100%;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 18px rgba(37, 211, 102, 0.28);
+      border: none;
+      cursor: pointer;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: var(--wa-green-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(37, 211, 102, 0.38);
+    }
+
+    .whatsapp-btn i {
+      font-size: 1.35rem;
+    }
+
+    .phone-text {
+      margin-top: 14px;
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      direction: ltr;
+    }
+
+    .mobile-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(15, 22, 33, 0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-top: 1px solid var(--border);
+      padding: 12px 16px;
+      z-index: 45;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .mobile-price-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-price-label {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+    }
+
+    .mobile-price-val {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.5;
+    }
+
+    .mobile-price-val span {
+      font-size: 0.85rem;
+      color: var(--duo-green);
+      font-family: 'Readex Pro', sans-serif;
+    }
+
+    .mobile-cta {
+      background: var(--wa-green);
+      color: #fff !important;
+      text-decoration: none;
+      padding: 11px 18px;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+      justify-content: center;
+      max-width: 220px;
+    }
+
+    @media (max-width: 900px) {
+      main {
+        padding: 24px 14px;
+      }
+
+      .product-card {
+        grid-template-columns: 1fr;
+      }
+
+      .card-sidebar {
+        border-right: none;
+        border-top: 1px solid var(--border);
+        padding: 28px 24px;
+      }
+
+      .card-body {
+        padding: 24px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mobile-bar {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header-inner {
+        padding: 12px 14px;
+      }
+
+      .header-badge {
+        font-size: 0.72rem;
+        padding: 6px 9px;
+      }
+
+      .hero-strip {
+        padding: 20px;
+      }
+
+      .hero-content h2 {
+        font-size: 1.15rem;
+      }
+
+      .card-title {
+        font-size: 1.4rem;
+      }
+
+      .price-num {
+        font-size: 3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo-box">
+        <div class="logo-icon">
+          <i class="fa-solid fa-earth-americas"></i>
+        </div>
+      </div>
+
+      <div class="header-badge">
+        <div class="status-pulse"></div>
+        <span>متوفر للتفعيل الفوري</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="hero-strip">
+      <div class="hero-content">
+        <h2>اشتراكك المفضل بأعلى جودة وأفضل سعر</h2>
+        <p>يتم ربط الاشتراك بحسابك الشخصي دون الحاجة إلى مشاركة بياناتك السرية.</p>
+      </div>
+
+      <div class="badges-row">
+        <div class="badge-chip">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>تفعيل بحسابك الشخصي</span>
+        </div>
+
+        <div class="badge-chip">
+          <i class="fa-solid fa-bolt"></i>
+          <span>تسليم فوري وسريع</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="products-container" id="productsContainer">
+
+      <article class="product-card">
+
+        <div class="card-body">
+          <div>
+            <div class="status-badge">
+              <i class="fa-solid fa-user-check"></i>
+              تفعيل على حسابك الشخصي
+            </div>
+
+            <h2 class="card-title">اشتراك دوولينجو بريميوم (12 شهر)</h2>
+
+            <p class="card-desc">
+              احصل على مزايا Duolingo Super لمدة سنة كاملة على حسابك الخاص.
+              تعلّم بأريحية، وتابع مراحل دراستك ونقاطك وسلاسل الحماسة (Streak).
+            </p>
+
+            <div class="features-grid">
+
+              <div class="feature-item">
+                <span class="feature-icon">
+                  <i class="fa-solid fa-ban"></i>
+                </span>
+                <span>1. بدون إعلانات مزعجة</span>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon">
+                  <i class="fa-solid fa-crown"></i>
+                </span>
+                <span>2. الوصول إلى مميزات Premium</span>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon">
+                  <i class="fa-solid fa-book-open"></i>
+                </span>
+                <span>3. دروس تفاعلية ومتنوعة</span>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon">
+                  <i class="fa-solid fa-language"></i>
+                </span>
+                <span>4. تعلّم أكثر من لغة</span>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon">
+                  <i class="fa-solid fa-chart-line"></i>
+                </span>
+                <span>5. متابعة تقدمك وتطور مستواك</span>
+              </div>
+
+              <div class="feature-item">
+                <span class="feature-icon">
+                  <i class="fa-solid fa-mobile-screen"></i>
+                </span>
+                <span>6. متوفر على أجهزتك</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="safety-notice">
+            <i class="fa-solid fa-lock"></i>
+            <span>اشتراك دوولينجو سوبر</span>
+          </div>
+        </div>
+
+        <div class="card-sidebar">
+
+          <div class="duration-tag">اشتراك لمدة سنة كاملة (12 شهر)</div>
+
+          <div class="price-container">
+            <div class="current-price">
+              <span class="price-num">31</span>
+              <span class="price-curr">ريال بس</span>
+            </div>
+
+            <div class="old-price-row">
+              <span>السعر الأساسي: <del>300 ريال</del></span>
+              <span class="discount-pill">السعر الحالي 31 ريال</span>
+            </div>
+          </div>
+
+          <div class="guarantee-box">
+            <i class="fa-solid fa-circle-check" style="color:var(--duo-green); margin-left: 4px;"></i>
+            تفاصيل التفعيل تُحدَّد عند الطلب
+          </div>
+
+          <a
+            href="https://wa.me/966570410551?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%A8%D9%8A%20%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D8%AF%D9%88%D9%88%D9%84%D9%8A%D9%86%D8%AC%D9%88%20%D8%A8%D8%B1%D9%8A%D9%85%D9%8A%D9%88%D9%85%20%D8%B3%D9%86%D8%A9%20%D9%83%D8%A7%D9%85%D9%84%D8%A9%20%D8%B9%D9%84%D9%89%20%D8%AD%D8%B3%D8%A7%D8%A8%D9%8A%20%D8%A7%D9%84%D8%B4%D8%AE%D8%B5%D9%8A%20%D8%A8%D9%80%2031%20%D8%B1%D9%8A%D8%A7%D9%84"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="whatsapp-btn">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>تواصل واطلب عبر واتساب</span>
+          </a>
+
+          <div class="phone-text">
+            <span>+966 57 041 0551</span>
+            <i class="fa-solid fa-phone"></i>
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+  </main>
+
+  <div class="mobile-bar">
+    <div class="mobile-price-wrap">
+      <span class="mobile-price-label">دوولينجو 12 شهر</span>
+      <div class="mobile-price-val">31 <span>ريال بس</span></div>
+    </div>
+
+    <a
+      href="https://wa.me/966570410551?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%A8%D9%8A%20%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D8%AF%D9%88%D9%88%D9%84%D9%8A%D9%86%D8%AC%D9%88%20%D8%A8%D8%B1%D9%8A%D9%85%D9%8A%D9%88%D9%85%20%D8%B3%D9%86%D8%A9%20%D9%83%D8%A7%D9%85%D9%84%D8%A9%20%D8%B9%D9%84%D9%89%20%D8%AD%D8%B3%D8%A7%D8%A8%D9%8A%20%D8%A7%D9%84%D8%B4%D8%AE%D8%B5%D9%8A%20%D8%A8%D9%80%2031%20%D8%B1%D9%8A%D8%A7%D9%84"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mobile-cta">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span>اطلب عبر واتساب</span>
+    </a>
+  </div>
+
+</body>
+</html>
