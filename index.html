@@ -678,5 +678,37 @@
     </a>
   </div>
 
+
+
+<!-- لوحة التحكم السرية لتعديل الأسعار والنصوص -->
+<div id="secret-admin-panel" style="display: none; position: fixed; bottom: 10px; left: 10px; background: rgba(20, 20, 30, 0.95); border: 1px solid #8a2be2; padding: 15px; border-radius: 12px; z-index: 9999; color: #fff; direction: rtl; box-shadow: 0 5px 20px rgba(0,0,0,0.5);">
+    <p style="margin: 0 0 8px 0; font-size: 13px; color: #a78bfa;">🔐 لوحة التحكم السرية</p>
+    <input type="text" id="new-price-input" placeholder="اكتب السعر الجديد هنا..." style="padding: 6px; border-radius: 6px; border: 1px solid #444; background: #111; color: #fff; width: 160px; margin-bottom: 8px; display: block;">
+    <button onclick="updatePrice()" style="background: #8a2be2; color: #fff; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-weight: bold;">تحديث السعر</button>
+</div>
+
+<script>
+    // زر مخفي أو ضغطة سرية في أسفل يسار الصفحة لإظهار لوحة التحكم
+    document.addEventListener('keydown', function(event) {
+        // إذا ضغطت على الحرفين Ctrl + Q مثلاً أو افتحها برمز سري
+        if (event.ctrlKey && event.key === 'q') {
+            let pin = prompt("أدخل الرمز السري:");
+            if (pin === "1011") {
+                document.getElementById('secret-admin-panel').style.display = 'block';
+                alert("تم التحقق بنجاح! مرحباً بك يا متعب.");
+            } else {
+                alert("الرمز غير صحيح!");
+            }
+        }
+    });
+
+    function updatePrice() {
+        let val = document.getElementById('new-price-input').value;
+        if(val) {
+            // ابحث عن عنصر السعر في موقعك وقم بتغييره (يمكننا ربطه بـ ID السعر عندك)
+            alert("تم حفظ السعر المؤقت: " + val);
+        }
+    }
+</script>
 </body>
 </html>
